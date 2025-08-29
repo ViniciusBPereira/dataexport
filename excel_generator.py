@@ -1,5 +1,5 @@
 import pandas as pd
-from app.utils.logger import logger
+from logger import logger
 
 def generate_excel(data, output_stream):
     if not data:
@@ -19,3 +19,4 @@ def generate_excel(data, output_stream):
     pivot_df = pivot_df.rename(columns={'Recursonome': 'Vistoriador'})
     pivot_df.to_excel(output_stream, index=False)
     logger.info("Excel gerado")
+
