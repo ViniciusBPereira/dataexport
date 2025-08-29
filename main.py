@@ -1,8 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
-from app.utils.logger import logger
-from app.services.api_consumer import run_pipeline
-from app.services.excel_generator import generate_excel
+from logger import logger
+from api_consumer import run_pipeline
+from excel_generator import generate_excel
 import io
 
 app = FastAPI(title="DataExport")
@@ -29,3 +29,4 @@ def gerar_excel():
     except Exception as e:
         logger.exception(f"Erro ao gerar Excel: {e}")
         raise HTTPException(status_code=500, detail="Erro interno ao gerar Excel")
+
